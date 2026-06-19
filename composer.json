@@ -1,0 +1,48 @@
+{
+    "name": "sisly/coach",
+    "description": "Sisly Coach — AI-powered workplace mood coaching with parallel safety classifier. Five coaches (Meetly, Presso, Loopy, Boostly, Vento) with EN/AR support.",
+    "type": "library",
+    "license": "proprietary",
+    "keywords": ["laravel", "coach", "ai", "anthropic", "mental-wellbeing", "sisly"],
+    "authors": [
+        {
+            "name": "Sisly",
+            "email": "dev@sisly.ai"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sisly\\Coach\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sisly\\Coach\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sisly\\Coach\\CoachServiceProvider"
+            ],
+            "aliases": {
+                "SislyCoach": "Sisly\\Coach\\Facades\\Coach"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
