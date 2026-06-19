@@ -22,7 +22,7 @@ namespace Sisly\Coach\Support;
  *   "safety":       { "verdict": "ok", "category": "none" },
  *   "coach_text":   "warm summary line",
  *   "prescription": { "content_type": "...", "current_mood": "...", "target_mood": "...", "reason": "..." },
- *   "asset":        { "content_id": 497, "title": "...", "audio_path": "...", "thumbnail": "...", ... },
+ *   "asset":        { "content_id": 497, "title": "...", "media_type": "Audio", "media_path": "...", "media_thumbnail": "...", ... },
  *   "ended":        false
  * }
  *

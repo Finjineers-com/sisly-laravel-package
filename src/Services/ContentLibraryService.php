@@ -24,6 +24,11 @@ use Sisly\Coach\Support\ContentAsset;
  *   boostly → Confidence
  *   vento   → Let it out
  *
+ * Each item in the response has a nested "media" object with:
+ *   media_type      → "Audio" or "Video"
+ *   media_path      → URL to the media file
+ *   media_thumbnail → URL to the thumbnail image
+ *
  * A random asset is selected from the returned list to vary recommendations.
  * If the API is unreachable or returns no usable assets, null is returned
  * silently — the coach reply is still returned without a prescription card.
@@ -100,18 +105,20 @@ class ContentLibraryService
             return null;
         }
 
-        $media     = $item['media'] ?? [];
-        $audioPath = $media['audio_path']      ?? null;
-        $thumbnail = $media['audio_thumbnail'] ?? null;
+        $media          = $item['media'] ?? [];
+        $mediaType      = $media['media_type']      ?? null;
+        $mediaPath      = $media['media_path']      ?? null;
+        $mediaThumbnail = $media['media_thumbnail'] ?? null;
 
         return new ContentAsset(
-            contentId:    (int) $contentId,
-            title:        $item['title']          ?? '',
-            description:  $item['description']    ?? '',
-            duration:     (int) ($item['duration'] ?? 0),
-            mediaCategory: $item['media_category'] ?? '',
-            audioPath:    $audioPath,
-            thumbnail:    $thumbnail,
+            contentId:      (int) $contentId,
+            title:          $item['title']          ?? '',
+            description:    $item['description']    ?? '',
+            duration:       (int) ($item['duration'] ?? 0),
+            mediaCategory:  $item['media_category'] ?? '',
+            mediaType:      $mediaType,
+            mediaPath:      $mediaPath,
+            mediaThumbnail: $mediaThumbnail,
         );
     }
 }

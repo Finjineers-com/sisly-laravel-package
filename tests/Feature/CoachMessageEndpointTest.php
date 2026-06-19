@@ -160,13 +160,14 @@ class CoachMessageEndpointTest extends TestCase
                 reason:      'A quiet two minutes before you walk in.',
             ),
             asset: new ContentAsset(
-                contentId:     498,
-                title:         'Rushing to start day',
-                description:   'Rushing to start day',
-                duration:      107,
-                mediaCategory: 'Meditation',
-                audioPath:     'https://sisly-eu-s3bucket.s3.eu-central-1.amazonaws.com/insights_Content/english/audio/insight_english_498_live.mp3',
-                thumbnail:     'https://sisly-eu-s3bucket.s3.eu-central-1.amazonaws.com/insights_Content/english/audio_thumbnails/insight_english_498_live.png',
+                contentId:      498,
+                title:          'Rushing to start day',
+                description:    'Rushing to start day',
+                duration:       107,
+                mediaCategory:  'Meditation',
+                mediaType:      'Audio',
+                mediaPath:      'https://sisly-eu-s3bucket.s3.eu-central-1.amazonaws.com/insights_Content/english/audio/insight_english_498_live.mp3',
+                mediaThumbnail: 'https://sisly-eu-s3bucket.s3.eu-central-1.amazonaws.com/insights_Content/english/audio_thumbnails/insight_english_498_live.png',
             ),
             ended: false,
         );
@@ -186,7 +187,7 @@ class CoachMessageEndpointTest extends TestCase
                  ->assertJsonPath('ended', false)
                  ->assertJsonStructure([
                      'prescription' => ['content_type', 'current_mood', 'target_mood', 'reason'],
-                     'asset'        => ['content_id', 'title', 'audio_path', 'thumbnail'],
+                     'asset'        => ['content_id', 'title', 'media_type', 'media_path', 'media_thumbnail'],
                  ]);
     }
 
