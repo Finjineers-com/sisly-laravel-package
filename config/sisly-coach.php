@@ -112,11 +112,11 @@ return [
         'crisis_copy' => [
             'en' => env(
                 'SISLY_CRISIS_COPY_EN',
-                "I'm really glad you told me, and I'm a bit worried about you. You deserve real support right now, more than I can give. Please reach out: UAE HOPE line 800 4673, or 999 for emergencies. I'm here with you."
+                "I'm a bit worried about you. You deserve real support right now, more than I can give. Please reach out: UAE HOPE line 800 4673, or 999 for emergencies. I'm here with you."
             ),
             'ar' => env(
                 'SISLY_CRISIS_COPY_AR',
-                "سعيد جداً أنك أخبرتني، وأنا قلق عليك قليلاً. أنت تستحق دعماً حقيقياً الآن، أكثر مما أستطيع تقديمه. أرجوك تواصل: خط الأمل في الإمارات 800 4673، أو 999 للطوارئ. أنا هنا معك."
+                "أنا قلق عليك قليلاً. أنت تستحق دعماً حقيقياً الآن، أكثر مما أستطيع تقديمه. أرجوك تواصل: خط الأمل في الإمارات 800 4673، أو 999 للطوارئ. أنا هنا معك."
             ),
         ],
 

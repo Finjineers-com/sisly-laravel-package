@@ -284,4 +284,11 @@ Proprietary. © Sisly. All rights reserved.
 Architecture, personas, GCC tuning, and classifier design are trade secrets.  
 Patent provisional + FTO required before any public disclosure of method claims.
 
-git add . && git commit -m 'first commit - v1.0.0' && git tag v1.0.0 && git push origin main --tags
+git add . && git commit -m 'crisis copy fix - v1.0.3' && git tag v1.0.3 && git push origin main --tags
+
+
+You can replace this text without touching any code — just set these env vars in your host app:
+
+SISLY_CRISIS_COPY_EN="your clinically approved English copy"
+SISLY_CRISIS_COPY_AR="your clinically approved Arabic copy"
+SISLY_CRISIS_SIGNED_OFF=true
