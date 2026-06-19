@@ -273,4 +273,5 @@ Proprietary. © Sisly. All rights reserved.
 
 Architecture, personas, GCC tuning, and classifier design are trade secrets.  
 Patent provisional + FTO required before any public disclosure of method claims.
-1
+
+git add . && git commit -m 'first commit - v1.0.0' && git tag v1.0.0 && git push origin main --tags
