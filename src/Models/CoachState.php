@@ -100,13 +100,14 @@ class CoachState extends Model
      */
     public function appendMessages(string $userMessage, string $assistantReply): void
     {
-        $window   = $this->last_2_messages ?? [];
+        $max    = (int) config('sisly-coach.state.max_context_messages', 40);
+        $window = $this->last_2_messages ?? [];
+
         $window[] = ['role' => 'user',      'content' => $userMessage];
         $window[] = ['role' => 'assistant', 'content' => $assistantReply];
 
-        // Trim to last 4 items = 2 pairs
-        if (count($window) > 4) {
-            $window = array_slice($window, -4);
+        if (count($window) > $max) {
+            $window = array_slice($window, -$max);
         }
 
         $this->last_2_messages = array_values($window);

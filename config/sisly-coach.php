@@ -59,8 +59,9 @@ return [
     | Default 24 hours. A session beyond this TTL starts fresh.
     */
     'state' => [
-        'driver'      => env('SISLY_STATE_DRIVER', 'database'),
-        'ttl_seconds' => env('SISLY_STATE_TTL', 86400), // 24 hours
+        'driver'               => env('SISLY_STATE_DRIVER', 'database'),
+        'ttl_seconds'          => env('SISLY_STATE_TTL', 86400), // 24 hours
+        'max_context_messages' => env('SISLY_MAX_CONTEXT_MESSAGES', 40), // 20 user + 20 assistant
     ],
 
     /*
