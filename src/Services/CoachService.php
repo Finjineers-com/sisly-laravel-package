@@ -87,6 +87,9 @@ class CoachService
             $userMessage,
         );
 
+        // Strip em dashes the model occasionally emits despite prompt instruction.
+        $coachReplyRaw = str_replace('—', ', ', $coachReplyRaw);
+
         // -----------------------------------------------------------------------
         // STEP 3 — Safety verdict overrides coach (non-negotiable)
         // This is a literal `if` block, not hidden in middleware, per spec.
