@@ -101,11 +101,15 @@ enum CoachId: string
 
     /**
      * The content_type parameter sent to the Sisly content API.
-     * Frozen — do not change without product sign-off.
+     * Resolved from config('sisly-coach.coach_content_type_map') so the
+     * host app can override mappings without touching the package source.
+     * Falls back to the hardcoded defaults if the config key is missing.
      */
     public function contentTypeParam(): string
     {
-        return match($this) {
+        $map = config('sisly-coach.coach_content_type_map', []);
+
+        return $map[$this->value] ?? match($this) {
             self::Meetly  => 'Meetings',
             self::Presso  => 'Too much',
             self::Loopy   => 'Quiet mind',
